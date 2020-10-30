@@ -2,9 +2,19 @@ package com.anderson.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity //transforma a classe em uma entidade do JPA, banco de dados
 public class Categoria implements Serializable{
 	private static final long serialVersionUID = 1L;
 	//1º Atributos básicos, por padrão todas classes são private (não acessíveis por outras):
+	
+	//definindo id como chave primária
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id; 
 	private String nome;
 	
